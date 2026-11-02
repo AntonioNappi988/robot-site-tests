@@ -1,0 +1,5 @@
+robotframework>=7.0
+robotframework-seleniumlibrary>=6.5
+robotframework-requests>=0.9.7
+requests>=2.31
+beautifulsoup4>=4.12
