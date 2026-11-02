@@ -2,7 +2,7 @@
 Documentation     Test HTTP sulle pagine principali del sito.
 Library           RequestsLibrary
 Resource          ../resources/common.resource
-Suite Setup       Create Session    site    ${BASE_URL}    timeout=15
+Suite Setup       Create Session    site    ${BASE_URL}    headers=${HEADERS}    timeout=15
 Suite Teardown    Delete All Sessions
 
 *** Test Cases ***

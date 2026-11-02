@@ -5,11 +5,15 @@ Library          SeleniumLibrary
 *** Variables ***
 ${BASE_URL}    https://antonionappi.pages.dev
 ${BROWSER}     headlesschrome
+# Cloudflare blocca gli User-Agent "python-requests" e "HeadlessChrome" con un 403
+${USER_AGENT}  RobotFramework-SiteTests
+&{HEADERS}     User-Agent=${USER_AGENT}
 ${POPUP_NO}    (//*[normalize-space()="No, continua così"])[last()]
 
 *** Keywords ***
 Apri Sito
     Open Browser    ${BASE_URL}    ${BROWSER}
+    ...    options=add_argument("--user-agent=${USER_AGENT}")
     Set Window Size    1440    900
     Set Selenium Timeout    10s
     Chiudi Popup Accelerazione Se Presente
